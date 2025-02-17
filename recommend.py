@@ -6,11 +6,13 @@ from sklearn.metrics.pairwise import cosine_similarity
 # Load HuggingFace model
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
-# Load dataset and precompute embeddings
+# Load/process dataset and precompute embeddings
 def process_dataset(csv_path):
-    df = pd.read_csv(csv_path).fillna('')  # Ensure no NaNs
-    df = df.drop_duplicates(subset=['book_name'], keep='first')  # Remove duplicate book titles
-    df['embeddings'] = list(model.encode(df['summaries'].tolist(), convert_to_numpy=True))  # Precompute embeddings
+    df = pd.read_csv(csv_path).fillna('') 
+    df = df.drop_duplicates(subset=['book_name'], keep='first')  
+    # Precompute embeddings
+    df['embeddings'] = list(model.encode(df['summaries'].tolist(), convert_to_numpy=True))  
+
     return df
 
 # Compute similarity and get recommendations

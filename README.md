@@ -61,3 +61,6 @@ Top Book Recommendations:
 ---
 
 I hope this helps you discover the perfect book! Prioritizing mental health and mindfulness is more important than ever in today's fast-paced world.
+
+---
+<sub>Considering my experience with Python and NLP, my desired salary range for this role is $24-$30. I am definitely open to negotiation though!</sub>
